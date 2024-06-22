@@ -1,9 +1,9 @@
-# Project: algo3
+# Project: algo4linux
 # Makefile created by Steve Chang
-# Date modified: 2024.02.25
+# Date modified: 2024.06.22
 
 OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
-ASMS = $(addprefix $(ASMDIR)/,$(SRCS:.c=.S))
+ASMS = $(addprefix $(ASMDIR)/,$(SRCS:.c=.s))
 DEPS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.c.d))
 
 # C_INCDIRS = $(foreach dir,$(MODULE_INCLUDES),$(PROJDIR)/$(dir))
@@ -55,7 +55,7 @@ objall: $(OBJS)
 
 $(OBJS): | $(OBJDIR)
 
-$(OBJDIR)/%.o : $(ASMDIR)/%.S
+$(OBJDIR)/%.o : $(ASMDIR)/%.s
 	$(CC) $(DEFINES) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
@@ -67,7 +67,7 @@ asmall: $(ASMS)
 
 $(ASMS): | $(ASMDIR)
 
-$(ASMDIR)/%.S : %.c
+$(ASMDIR)/%.s : %.c
 	$(CC) $(DEFINES) $(CFLAGS) -c $< -S -o $@
 
 $(ASMDIR):
@@ -83,7 +83,6 @@ depall: | $(OBJDIR)
 .PHONY: clean
 clean:
 	rm -rf $(OBJDIR)
-	rm -rf $(ASMDIR)
 
 .PHONY: objclean
 objclean:
@@ -91,8 +90,7 @@ objclean:
 
 .PHONY: asmclean
 asmclean:
-	rm -f $(ASMDIR)/*.o
-
+	rm -f $(ASMDIR)/*.s
 .PHONY: depclean
 depclean:
 	rm -f $(OBJDIR)/*.d

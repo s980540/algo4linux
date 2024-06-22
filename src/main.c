@@ -11,7 +11,7 @@
 
 #define likely(x)                       __builtin_expect(!!(x), 1)
 #define unlikely(x)                     __builtin_expect(!!(x), 0)
-#define BUF_SIZE_MAX                                    (4096)
+#define BUF_SIZE_MAX                    (4096)
 
 int str_size;
 size_t buf_size = 0;

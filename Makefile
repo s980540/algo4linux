@@ -1,8 +1,8 @@
-# Project: algo3
+# Project: algo4linux
 # Makefile created by Steve Chang
-# Date modified: 2024.02.25
+# Date modified: 2024.06.22
 
-BINNAME = algo.exe
+BINNAME = algo4linux
 PROJDIR = $(CURDIR)
 SRCDIR 	= $(PROJDIR)/src
 LIBDIR	= $(PROJDIR)/lib
@@ -24,10 +24,10 @@ COMMON_INCLUDE = \
 	$(CURDIR)/include \
 
 EXTERN_LIBDIR = \
-	"C:/MinGW/lib" \
+	"/usr/lib" \
 
 EXTERN_INCLUDE = \
-	"C:/MinGW/include" \
+	"/usr/include" \
 
 CC = gcc
 AR = ar
