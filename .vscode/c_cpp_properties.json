@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "MinGW32",
+            "includePath": [
+                "c:/Users/s9805/OneDrive/Workspace/algo3/**",
+                "c:/Users/s9805/OneDrive/Workspace/algo3/include",
+                "c:/Users/s9805/OneDrive/Workspace/algo3/src/crc",
+                "c:/Users/s9805/OneDrive/Workspace/algo3/src/mutex",
+                "c:/Users/s9805/OneDrive/Workspace/algo3/src/thread",
+                "c:/Users/s9805/OneDrive/Workspace/algo3/src/utility"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x86",
+            "macFrameworkPath": [],
+            "mergeConfigurations": false,
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "browse": {
+                "path": [
+                    "c:/Users/s9805/OneDrive/Workspace/algo3/**",
+                    "c:/Users/s9805/OneDrive/Workspace/algo3/include",
+                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/crc",
+                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/mutex",
+                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/thread",
+                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/utility",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
