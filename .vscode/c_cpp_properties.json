@@ -3,12 +3,8 @@
         {
             "name": "MinGW32",
             "includePath": [
-                "c:/Users/s9805/OneDrive/Workspace/algo3/**",
-                "c:/Users/s9805/OneDrive/Workspace/algo3/include",
-                "c:/Users/s9805/OneDrive/Workspace/algo3/src/crc",
-                "c:/Users/s9805/OneDrive/Workspace/algo3/src/mutex",
-                "c:/Users/s9805/OneDrive/Workspace/algo3/src/thread",
-                "c:/Users/s9805/OneDrive/Workspace/algo3/src/utility"
+                "c:/Users/s9805/OneDrive/Workspace/algo4linux/**",
+                "c:/Users/s9805/OneDrive/Workspace/algo4linux/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -23,12 +19,8 @@
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "browse": {
                 "path": [
-                    "c:/Users/s9805/OneDrive/Workspace/algo3/**",
-                    "c:/Users/s9805/OneDrive/Workspace/algo3/include",
-                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/crc",
-                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/mutex",
-                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/thread",
-                    "c:/Users/s9805/OneDrive/Workspace/algo3/src/utility",
+                    "c:/Users/s9805/OneDrive/Workspace/algo4linux/**",
+                    "c:/Users/s9805/OneDrive/Workspace/algo4linux/include",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true
