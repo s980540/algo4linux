@@ -2,12 +2,10 @@
 # Makefile created by Steve Chang
 # Date modified: 2024.06.22
 
-BINNAME = algo4linux
 PROJDIR = $(CURDIR)
 SRCDIR 	= $(PROJDIR)/src
 LIBDIR	= $(PROJDIR)/lib
 BINDIR 	= $(PROJDIR)/bin
-ASMDIR 	= $(PROJDIR)/asm
 
 SUBDIR = \
 	src \
@@ -16,11 +14,101 @@ SUBDIR = \
 COMMON_INCLUDE = \
 	$(CURDIR)/include \
 
-EXTERN_LIBDIR = \
-	"/usr/lib" \
+ifeq ($(OS),Windows_NT)
+    OSFLAG += -D WIN32
+    ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
+        OSFLAG += -D AMD64
+		BINNAME = algo4.exe
 
-EXTERN_INCLUDE = \
-	"/usr/include" \
+		EXTERN_LIBDIR = \
+			"C:/MinGW/lib" \
+
+		EXTERN_INCLUDE = \
+			"C:/MinGW/include" \
+
+    else
+        ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
+            OSFLAG += -D AMD64
+			BINNAME = algo4.exe
+
+			EXTERN_LIBDIR = \
+				"C:/MinGW/lib" \
+
+			EXTERN_INCLUDE = \
+				"C:/MinGW/include" \
+
+        endif
+        ifeq ($(PROCESSOR_ARCHITECTURE),x86)
+            OSFLAG += -D IA32
+			BINNAME = algo4.exe
+
+			EXTERN_LIBDIR = \
+				"C:/MinGW/lib" \
+
+			EXTERN_INCLUDE = \
+				"C:/MinGW/include" \
+
+        endif
+    endif
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        OSFLAG += -D LINUX
+		BINNAME = algo4
+
+		EXTERN_LIBDIR = \
+			"/usr/lib" \
+
+		EXTERN_INCLUDE = \
+			"/usr/include" \
+
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        OSFLAG += -D OSX
+		BINNAME = algo4
+
+		EXTERN_LIBDIR = \
+			"/usr/lib" \
+
+		EXTERN_INCLUDE = \
+			"/usr/include" \
+
+    endif
+    UNAME_P := $(shell uname -p)
+    ifeq ($(UNAME_P),x86_64)
+        OSFLAG += -D AMD64
+		BINNAME = algo4
+
+		EXTERN_LIBDIR = \
+			"/usr/lib" \
+
+		EXTERN_INCLUDE = \
+			"/usr/include" \
+
+    endif
+    ifneq ($(filter %86,$(UNAME_P)),)
+        OSFLAG += -D IA32
+		BINNAME = algo4
+
+		EXTERN_LIBDIR = \
+			"/usr/lib" \
+
+		EXTERN_INCLUDE = \
+			"/usr/include" \
+
+    endif
+    ifneq ($(filter arm%,$(UNAME_P)),)
+        OSFLAG += -D ARM
+		BINNAME = algo4
+
+		EXTERN_LIBDIR = \
+			"/usr/lib" \
+
+		EXTERN_INCLUDE = \
+			"/usr/include" \
+
+    endif
+endif
 
 CC = gcc
 AR = ar
@@ -52,15 +140,16 @@ export PROJDIR
 export SRCDIR
 export LIBDIR
 export BINDIR
-export ASMDIR
 export COMMON_INCLUDE
 export EXTERN_LIBDIR
 export EXTERN_INCLUDE
 export CC AR
 export MAKE_RULES
+export OSFLAG
 
 .PHONY: all
 all:
+	@echo $(OSFLAG)
 	mkdir -p $(BINDIR)
 	mkdir -p $(LIBDIR)
 	for dir in $(SUBDIR); do \

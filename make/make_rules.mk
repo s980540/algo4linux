@@ -9,6 +9,7 @@ DEPS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.c.d))
 # C_INCDIRS = $(foreach dir,$(MODULE_INCLUDES),$(PROJDIR)/$(dir))
 
 CFLAGS = \
+	$(OSFLAG) \
 	$(addprefix -I,$(COMMON_INCLUDE)) \
 	$(addprefix -I,$(EXTERN_INCLUDE)) \
 	$(foreach include, . $(INCLUDE), -I$(SRCDIR)/$(include)) \
