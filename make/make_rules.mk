@@ -14,10 +14,10 @@ CFLAGS = \
 	$(addprefix -I,$(EXTERN_INCLUDE)) \
 	$(foreach include, . $(INCLUDE), -I$(SRCDIR)/$(include)) \
 	-g -O2 -Wall
+# -g -Os -Wall
 # -g -Wall
 
-
-DEFINES +=-DNVME_MI_DEBUG_TRACE
+DEFINES +=
 
 # # Extra flags to give to compilers when they are supposed to invoke the linker,
 # # ‘ld’, such as -L. Libraries (-lfoo) should be added to the LDLIBS variable
