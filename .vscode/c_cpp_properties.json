@@ -43,7 +43,8 @@
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "linux"
             ],
             "cStandard": "c11",
             "cppStandard": "gnu++14",

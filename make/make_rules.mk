@@ -83,6 +83,7 @@ depall: | $(OBJDIR)
 .PHONY: clean
 clean:
 	rm -rf $(OBJDIR)
+	rm -rf $(ASMDIR)
 
 .PHONY: objclean
 objclean:
