@@ -11,14 +11,7 @@ ASMDIR 	= $(PROJDIR)/asm
 
 SUBDIR = \
 	src \
-	# src/checksum \
-	# src/crc \
-	# src/mutex \
-	# src/thread \
-	# src/utility \
-	# src/aardvark \
-	# src/bin \
-	# src/opt \
+	src/aardvark \
 
 COMMON_INCLUDE = \
 	$(CURDIR)/include \
@@ -50,14 +43,7 @@ LDFLAGS = \
 # LDLIBS. Non-library linker flags, such as -L, should go in the LDFLAGS variable.
 LIBS = \
 	main \
-	# checksum \
-	# crc \
-	# mutex \
-	# thread \
-	# bin \
-	# utility \
-	# opt \
-	# aardvark \
+	aardvark \
 
 LDLIBS = $(foreach lib,$(LIBS),-l$(lib)) -lpthread	# <-- Do not change this order.
 

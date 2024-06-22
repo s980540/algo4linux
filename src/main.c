@@ -1,4 +1,5 @@
 #include "types.h"
+#include "aadetect.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -85,6 +86,8 @@ void test2(void)
 int main(int argc, char *argv[])
 {
 	srand(time(0));
+
+	aa_detect();
 
 	// test1();
 	test2();

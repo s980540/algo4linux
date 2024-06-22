@@ -2,14 +2,13 @@
 # Makefile created by Steve Chang
 # Date modified: 2024.06.22
 
-LIBNAME = libmain.a
+LIBNAME = libaardvark.a
 
-DIR = src
+DIR = aardvark
 
 SUBDIR =
 
-INCLUDE = \
-	aardvark \
+INCLUDE = crc \
 
 SRCS = $(wildcard *.c)
 
